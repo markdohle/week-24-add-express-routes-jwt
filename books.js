@@ -84,7 +84,6 @@ app.post('/books/remove', authenticateJWT, (req, res) => {
         return res.sendStatus(403);
     }
 
-
     const bookTitleToRemove = req.body.title;
     books = books.filter(book => book.title !== bookTitleToRemove);
 
