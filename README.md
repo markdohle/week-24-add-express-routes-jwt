@@ -104,10 +104,7 @@ After changes are made, you may need to save re-launch the servers.
 An example curl command that would work for this route and remove books with the title Things Fall Apart would be like the following:
 
 ```
-curl --location --request POST 'localhost:4000/books/remove' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MTYyNzU0MTMsImV4cCI6MTYxNjI4MjYxM30.x5ECpZlhNmySo_vlEXARqIQYlTAx5j28o1Qv8I0FsJA' \
---header 'Content-Type: application/json' \
---data-raw '{"title": "Things Fall Apart"}'
+curl --location --request POST 'localhost:4000/books/remove' \--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MTYyNzU0MTMsImV4cCI6MTYxNjI4MjYxM30.x5ECpZlhNmySo_vlEXARqIQYlTAx5j28o1Qv8I0FsJA' \--header 'Content-Type: application/json' \--data-raw '{"title": "Things Fall Apart"}'
 ```
 
 Note that you will need to replace the accessToken with your own, as with other curl commands, when you want to test this out.
