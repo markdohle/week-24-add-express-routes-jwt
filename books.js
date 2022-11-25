@@ -83,16 +83,12 @@ app.post('/books/remove', authenticateJWT, (req, res) => {
     if (role !== 'admin') {
         return res.sendStatus(403);
     }
-    
-    if (role !== 'admin') {
-        return res.sendStatus(403);
-    }
 
 
-    const book = req.body;
-    books.push(book);
+    const bookTitleToRemove = req.body.title;
+    books = books.filter(book => book.title !== bookTitleToRemove);
 
-    res.send('book added successfully');
+    res.send(`books with name: ${bookTitleToRemove} removed successfully`);
 });
 
 app.listen(4000, () => {
